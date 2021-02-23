@@ -1,9 +1,8 @@
-import express, { Request, Response } from "express";
+import * as express from "express";
 
 const app = express();
 
-app.get("/", (request: Request, response: Response) => {
-  return response.status(200).json({ message: "Hello dev" });
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 export default app;
